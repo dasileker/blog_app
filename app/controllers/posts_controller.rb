@@ -1,18 +1,24 @@
 class PostsController < ApplicationController
 
+  http_basic_authenticate_with name: 'root', password: 'admin', expect:[:index, :show] 
+
   
   def index
     @posts = Post.all
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
   
   def new
     @post = Post.new
   end
 
-
-  def show
+  def edit
     @post = Post.find(params[:id])
   end
+  
 
   def create
     @post = Post.new(post_params)
@@ -34,6 +40,16 @@ class PostsController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+
+    @post.destroy
+
+    redirect_to posts_path
+  
+  end
+
 
 
   private 

@@ -1,3 +1,21 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+html {
+  box-sizing: border-box;
+  background-color:  yellowgreen;
+}
+
+h1 {
+  text-align: center;
+  color: brown;
+}
+
+// .link_to {
+//   color: red;
+// }
+
+p {
+  margin-left: 30px;
+}
